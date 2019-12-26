@@ -7,24 +7,19 @@ use PHPMailer\PHPMailer\Exception;
 // Load Composer's autoloader
 require '../vendor/autoload.php';
 
-//mail($_POST["email"],"Your flight check-in",$emailBody,$emailHeaders);
-/* $firstName = "J.D.";
-$lastName = "Stone";
-$toEmail = "jdstone@jdstone1.com"; */
+// ****  DEFAULT VARIABLES - SET ME **** \\
+$fromEmail = "";
+$replyToEmail = "";
+
+
 $firstName = $_POST["first_name"];
 $lastName = $_POST["last_name"];
 $fullName = $firstName." ".$lastName;
 $toEmail = $_POST["email"];
 $subject = "Your flight check-in";
 
-/* $emailHeaders = "MIME-Version: 1.0" . "\r\n";
-$emailHeaders .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-$emailHeaders .= 'From: SERVER' . "\r\n"; */
-
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
-
-//if(count($_POST) == 0) throw new \Exception('Form is empty');
 
 $flightConfirmEmailBody = "<html><head><style>
 .bold {font-weight: bold;}
@@ -102,9 +97,9 @@ $mail->isSendmail();
 // Set HTML Content-Type
 $mail->isHTML();
 //Set who the message is to be sent from
-$mail->setFrom('', 'Flight Auto-Checkin');
+$mail->setFrom($fromEmail, 'Flight Auto-Checkin');
 //Set an alternative reply-to address
-$mail->addReplyTo('', 'Flight Auto-Checkin');
+$mail->addReplyTo($replyToEmail, 'Flight Auto-Checkin');
 //Set who the message is to be sent to
 $mail->addAddress($toEmail, $fullName);
 //Set the subject line

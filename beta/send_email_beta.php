@@ -1,6 +1,11 @@
 <?php
 require_once("Email.php");
 
+// ****  DEFAULT VARIABLES - SET ME **** \\
+$fromEmail = "";
+$replyToEmail = "";
+
+
 $email = new Email($_POST["first_name"], $_POST["last_name"], $_POST["email"], $_POST["subject"]);
 
 $flightConfirmationEmailBody = "<html><head><style>
@@ -102,9 +107,9 @@ $email->mail->isSendmail();
 // Set HTML Content-Type
 $email->mail->isHTML();
 //Set who the message is to be sent from
-$email->mail->setFrom('', 'Flight Auto-Checkin');
+$email->mail->setFrom($fromEmail, 'Flight Auto-Checkin');
 //Set an alternative reply-to address
-$email->mail->addReplyTo('', 'Flight Auto-Checkin');
+$email->mail->addReplyTo($replyToEmail, 'Flight Auto-Checkin');
 //Set who the message is to be sent to
 $email->mail->addAddress($email->getToEmail(), $email->getFullName());
 //Set the subject line

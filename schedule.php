@@ -1,4 +1,8 @@
 <?php
+// ****  DEFAULT VARIABLES - SET ME **** \\
+$airline_script = "";
+
+
 if (isset($_SERVER['HTTP_REFERER'])) {
     $referer_file = substr($_SERVER['HTTP_REFERER'], (strrpos($_SERVER['HTTP_REFERER'], "/") + 1));
     /* echo $referer_file."<br>";
@@ -17,7 +21,7 @@ if ($_SERVER['SERVER_ADDR'] == "10.0.1.9" && isset($referer_file) && (strpos($_S
             //file_put_contents('/tmp/crontab', $cron_contents.PHP_EOL.'#* * * * * touch /tmp/Jerry'.PHP_EOL);
             //file_put_contents('/tmp/crontab', $cron_contents.PHP_EOL.$cron_datetime.PHP_EOL);
             // # $firstName $lastName with $airline at HH:mm on YYYY-MM-DD
-            // mm HH M D * php -f /home/jd/public_html/services/airlines/southwest.php $confirmationNum $firstName $lastName
+            // mm HH M D * php -f script.php $confirmationNum $firstName $lastName
             file_put_contents('/tmp/crontab', $cron_contents.PHP_EOL.$cron_comment.PHP_EOL.$cron_datetime." ".$cron_cmd.PHP_EOL);
             exec('crontab /tmp/crontab', $o, $exit_code);
             //echo $exit_code;
@@ -310,7 +314,7 @@ if ($_SERVER['SERVER_ADDR'] == "10.0.1.9" && isset($referer_file) && (strpos($_S
     //$cron_datetime = formatDateTime($checkin_datetime);
     $cron_datetime = formatDateTime($checkin_datetime[0], $checkin_datetime[1]);
     //echo "<strong>Check-in Time (Cron):</strong> ".$cron_datetime."<br>";
-    $cron_cmd = "php -f /home/jd/public_html/services/airlines/southwest.php ".$_POST["inputConfirmationNum"]." ".$_POST["inputFirstName"]." \"".$_POST["inputLastName"]."\"";
+    $cron_cmd = "php -f ".$airline_script." ".$_POST["inputConfirmationNum"]." ".$_POST["inputFirstName"]." \"".$_POST["inputLastName"]."\"";
 
     //echo "Ref #: ".generateReferenceNum()."<br>";
 
