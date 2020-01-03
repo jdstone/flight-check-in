@@ -66,21 +66,20 @@ $flightConfirmationEmailBody = "<html><head><style>
 </style></head><body>";
 $flightConfirmationEmailBody .= "<h2>Your flight has been scheduled. Please see the details below.</h2>";
 $flightConfirmationEmailBody .= "<table class=\"table\">";
-$flightConfirmationEmailBody .= "<tr><td class=\"bold\">First Name:</td><td>".$_POST["first_name"]."</td></tr>";
-$flightConfirmationEmailBody .= "<tr><td class=\"bold\">Last Name:</td><td>".$_POST["last_name"]."</td></tr>";
+$flightConfirmationEmailBody .= "<tr><td class=\"bold\">First Name:</td><td>".$email->getFirstName()."</td></tr>";
+$flightConfirmationEmailBody .= "<tr><td class=\"bold\">Last Name:</td><td>".$email->getLastName()."</td></tr>";
 $flightConfirmationEmailBody .= "<tr><td class=\"bold\">Confirmation #:</td><td>".$_POST["confirmation_num"]."</td></tr>";
 $flightConfirmationEmailBody .= "<tr><td class=\"bold\">Airline:</td><td>".$_POST["airline"]."</td></tr>";
 $flightConfirmationEmailBody .= "<tr><td class=\"bold\">Flight Time:</td><td>".$_POST["flight_time"]."</td></tr>";
 $flightConfirmationEmailBody .= "<tr><td class=\"bold\">Flight Date:</td><td>".$_POST["flight_date"]."</td></tr>";
 $flightConfirmationEmailBody .= "<tr><td class=\"bold\">Reference #:</td><td>".$_POST["reference_num"]."</td></tr>";
 $flightConfirmationEmailBody .= "</table><br>";
-/* $flightConfirmationEmailBody .= "<p><a href=\"http://www.google.com\">Modify your Reservation</a> | <a href=\"http://www.google.com\">Cancel your Reservation</a></p>"; */
 $flightConfirmationEmailBody .= "</body></html>";
 
-$checkedInEmailBody .= "<h2>You have been automatically checked in. Please see your details below.</h2>";
+$checkedInEmailBody = "<h2>You have been automatically checked in. Please see your details below.</h2>";
 $checkedInEmailBody .= "<table class=\"table\">";
-$checkedInEmailBody .= "<tr><td class=\"bold\">First Name:</td><td>".$_POST["first_name"]."</td></tr>";
-$checkedInEmailBody .= "<tr><td class=\"bold\">Last Name:</td><td>".$_POST["last_name"]."</td></tr>";
+$checkedInEmailBody .= "<tr><td class=\"bold\">First Name:</td><td>".$email->getFirstName()."</td></tr>";
+$checkedInEmailBody .= "<tr><td class=\"bold\">Last Name:</td><td>".$email->getLastName()."</td></tr>";
 $checkedInEmailBody .= "<tr><td class=\"bold\">Confirmation #:</td><td>".$_POST["confirmation_num"]."</td></tr>";
 $checkedInEmailBody .= "<tr><td class=\"bold\">Airline:</td><td>".$_POST["airline"]."</td></tr>";
 $checkedInEmailBody .= "<tr><td class=\"bold\">Flight Time:</td><td>".$_POST["flight_time"]."</td></tr>";
@@ -93,12 +92,12 @@ $checkedInEmailBody .= "</body></html>";
 
 switch ($_POST["emailBodyType"])
 {
-    case "flightConfirmation":
-        $emailBody = $flightConfirmationEmailBody;
-        break;
-    case "checkedIn":
-        $emailBody = $checkedInEmailBody;
-        break;
+  case "flightConfirmation":
+    $emailBody = $flightConfirmationEmailBody;
+    break;
+  case "checkedIn":
+    $emailBody = $checkedInEmailBody;
+    break;
 }
 
 
@@ -118,8 +117,8 @@ $email->mail->Subject = $email->getSubject();
 $email->mail->msgHTML($emailBody);
 //send the message, check for errors
 if (!$email->mail->send()) {
-    echo "Mailer Error: " . $email->mail->ErrorInfo;
+  echo "Mailer Error: " . $email->mail->ErrorInfo;
 } else {
-    echo "Message sent!";
+  echo "Message sent!";
 }
 ?>

@@ -89,7 +89,6 @@ $flightConfirmEmailBody .= "<tr><td class=\"bold\">Flight Date:</td><td>".$_POST
 $flightConfirmEmailBody .= "<tr><td class=\"bold\">Reference #:</td><td>".$_POST["reference_num"]."</td></tr>";
 $flightConfirmEmailBody .= "<tr><td class=\"bold\">Reference #:</td><td>".$_POST["emailBody"]."</td></tr>";
 $flightConfirmEmailBody .= "</table><br>";
-/* $emailBody .= "<p><a href=\"http://www.google.com\">Modify your Reservation</a> | <a href=\"http://www.google.com\">Cancel your Reservation</a></p>"; */
 $flightConfirmEmailBody .= "</body></html>";
 
 // Set PHPMailer to use the sendmail transport
@@ -108,8 +107,8 @@ $mail->Subject = $subject;
 $mail->msgHTML($flightConfirmEmailBody);
 //send the message, check for errors
 if (!$mail->send()) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
+  echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
-    echo "Message sent!";
+  echo "Message sent!";
 }
 ?>

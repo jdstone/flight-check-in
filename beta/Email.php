@@ -9,46 +9,45 @@ require '../vendor/autoload.php';
 
 class Email
 {
-    private $fullName;
-    private $firstName;
-    private $lastName;
-    private $toEmail;
-    private $subject;
+  private $fullName;
+  private $firstName;
+  private $lastName;
+  private $toEmail;
+  private $subject;
 
-    function __construct(string $firstName, string $lastName, string $toEmail, string $subject)
-    {
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
-        $this->toEmail = $toEmail;
-        $this->subject = $subject;
+  function __construct(string $firstName, string $lastName, string $toEmail, string $subject)
+  {
+    $this->firstName = $firstName;
+    $this->lastName = $lastName;
+    $this->toEmail = $toEmail;
+    $this->subject = $subject;
 
-        $this->fullName = $this->firstName." ".$this->lastName;
-        $this->mail = new PHPMailer(true);
-    }
+    $this->fullName = $this->firstName." ".$this->lastName;
+    $this->mail = new PHPMailer(true);
+  }
 
-    public function getFullName()
-    {
-        return $this->fullName;
-    }
+  public function getFullName()
+  {
+    return $this->fullName;
+  }
 
-    public function getFirstName()
-    {
-        return $this->firstName;
-    }
+  public function getFirstName()
+  {
+    return $this->firstName;
+  }
 
-    public function getLastName()
-    {
-        return $this->lastName;
-    }
+  public function getLastName()
+  {
+    return $this->lastName;
+  }
 
-    public function getToEmail()
-    {
-        return $this->toEmail;
-    }
+  public function getToEmail()
+  {
+    return $this->toEmail;
+  }
 
-    public function getSubject()
-    {
-        return $this->subject;
-    }
+  public function getSubject()
+  {
+    return $this->subject;
+  }
 }
-
