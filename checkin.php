@@ -45,6 +45,10 @@
     <script>
       $(document).ready(function() {
         $('#confirmationModal').modal('show');
+
+        $('#confirmationModal').on('hidden.bs.modal', function () {
+          setTimeout(function(){ window.location.replace("checkin.php"); }, 0);
+        });
       });
 
       $(function() { 
