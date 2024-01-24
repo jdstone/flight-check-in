@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-Allows you to schedule an automated check-in to your flight, so you don't have to do it yourself. Once your reservation details (confirmation # and first and last name) are provided, the software will check you in to your flight 24 hours before it departs, with no manual steps from you.
+Allows you to schedule an automated check-in to your flight, so you don't have to do it yourself. Once your reservation details (confirmation # and first and last name) are provided, the software will check you in to your flight 24 hours before it departs, with no manual steps from you. But, this no longer works due to restrictions Southwest Airlines has put in place.
 
 
 ## What is This⁈ / The Story
