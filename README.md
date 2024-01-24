@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-Allows you to schedule an automated check-in to your flight, so you don't have to do it yourself. Once your reservation details (confirmation # and first and last name) are provided, the software will check you in to your flight 24 hours before it departs, with no manual steps from you. But, this no longer works due to restrictions Southwest Airlines has put in place.
+Allows you to schedule an automated check-in to your flight, so you don't have to do it yourself. Once your reservation details (confirmation # and first and last name) are provided, the software will check you in to your flight 24 hours before it departs, with no manual steps from you.
 
 
 ## What is This⁈ / The Story
@@ -36,7 +36,7 @@ See [the web scheduler](#the-web-scheduler) below for how this scheduled check-i
 
     - **Traveler information:** _boarding group_ and _boarding group position_.
 
-    A brief portion of JSON returned from the confirmation endpoint is shown in the section [below](#sample-confirmationw-api-response), with some information removed or changed for privacy. You can see that the token is quite lengthy.
+    A brief portion of JSON returned from the confirmation endpoint is shown in the section [below](#sample-confirmation-api-response), with some information removed or changed for privacy. You can see that the token is quite lengthy.
 
     This completes the check-in process of the passenger and the person has now successfully been checked in to their flight.
 
