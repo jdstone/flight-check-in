@@ -181,7 +181,7 @@ See [the web scheduler](#the-web-scheduler) below for how this scheduled check-i
 </details>
 
 
-## The takeaway...
+## The Takeaway Message
 
 I encountered a lot of obstacles during the investigation and implementation of this project. But that was a good thing because I learned so much from this undertaking. The obstacles I encountered and skills I acquired are discussed below.
 
