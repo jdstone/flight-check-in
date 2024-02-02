@@ -6,6 +6,8 @@ This project requires:
 
 * [guzzlehttp/guzzle](https://github.com/guzzle/guzzle)
 
+* [pear/net_ping](https://github.com/pear/Net_Ping)
+
 
 Install [Composer](https://getcomposer.org) and then install these packages using:
 
@@ -14,4 +16,6 @@ Install [Composer](https://getcomposer.org) and then install these packages usin
 2) `composer require phpmailer/phpmailer`
 
 3) `composer require guzzlehttp/guzzle`
+
+4) `composer require pear/net_ping`
 
