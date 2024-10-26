@@ -222,7 +222,7 @@ I encountered a lot of obstacles during the investigation and implementation of 
 <span style="font-size: small;">(that never really materialized🙃)</span>
 
 * **PHP object-oriented programming**<br>
-I originally wrote the quickly and just wanted it to work. OOP was never a priority. But as I started thinking about how I could possibly offer this a public software service, I realized it was probably best to rewrite it in OOP code. Or perhaps writing it in a different language. I did start down this path, as you can see in the [flight-check-in beta](https://github.com/jdstone/flight-check-in/pull/1) pull request. But the code is just a terrible mess, and I have no major reason to improve/fix it.
+I originally wrote this quickly and just wanted it to work. OOP was never a priority. But as I started thinking about how I could possibly offer this a public software service, I realized it was probably best to rewrite it in OOP code. Or perhaps writing it in a different language. I did start down this path, as you can see in the [flight-check-in beta](https://github.com/jdstone/flight-check-in/pull/1) pull request. But the code is just a terrible mess, and I have no major reason to improve or fix it.
 
 * **Use an anonymous proxy to send the request**<br>
 In the beta I created, you can see bits and pieces of a proxy implementation — the code is a terrible mess. Of course, the airline [Southwest] could have just changed their API or restrict access to it, which is what appears they eventually did. I don't remember exactly when their API was locked down from public use, but it was sometime after March 2022. As of January 2024, I haven't looked nor tried to figure out if there is a way around it.
