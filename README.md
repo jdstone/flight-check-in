@@ -1,5 +1,9 @@
 # Automatic Flight Check-in
 
+:warning: This software no longer functions for its intended use and is available for a proof of concept only.
+
+For my rewrite of this software in Python and Flask, click [here](https://github.com/jdstone/flight-check-in-flask).
+
 ## TL;DR
 
 Allows you to schedule an automated check-in to your flight, so you don't have to do it yourself. Once your reservation details (confirmation # and first and last name) are provided, the software will check you in to your flight 24 hours before it departs, with no manual steps from you.
