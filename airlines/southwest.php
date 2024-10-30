@@ -78,12 +78,18 @@ else
 
 
 
+// define variables for the confirm API call
 $swConfirmApiUrl = "https://www.southwest.com/api/air-checkin/v1/air-checkin/page/air/check-in/confirmation";
 
+$confNumber = $reviewDecodedData['data']['searchResults']['reservation']['confirmationNumber'];
+$firstName = $reviewDecodedData['data']['searchResults']['reservation']['travelers'][0]['firstName'];
+$lastName = $reviewDecodedData['data']['searchResults']['reservation']['travelers'][0]['lastName'];
+$token = $reviewDecodedData['data']['searchResults']['token'];
+
 // if a token was obtained from the previous check-in review, then continue check-in process
-if (isset($reviewDecodedData['data']['searchResults']['token']))
+if (isset($token))
 {
-    $confirmData = array("token" => $reviewDecodedData['data']['searchResults']['token'], "confirmationNumber" => $confNumber, "passengerFirstName" => $firstName, "passengerLastName" => $lastName, "application" => "air-check-in", "site" => "southwest");
+    $confirmData = array("token" => $token, "confirmationNumber" => $confNumber, "passengerFirstName" => $firstName, "passengerLastName" => $lastName, "application" => "air-check-in", "site" => "southwest");
     $jsonConfirmString = json_encode($confirmData);
 
     $confirmCurl = curl_init();
